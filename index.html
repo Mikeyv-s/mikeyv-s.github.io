@@ -203,13 +203,15 @@
                     break
             }
             }
+            $("#wanderer").css("top", Math.floor(Math.random()*screenHeight))
+            $("#wanderer").css("left", Math.floor(Math.random()*screenHeight))
         },100)
         setTimeout(()=>{
             if(!ctha.includes(38)){
             $("#c38").css("background", $("#c30").css("background"))
             $("#c38").text("Annexed territory of "+names[30])
             }
-            
+            $("#c"+Math.floor(Math.random()*64)).append("<img id='wanderer' src='wanderer.png'>")
         },10000)
         // Script tags should go at the end of the body:
         </script>
