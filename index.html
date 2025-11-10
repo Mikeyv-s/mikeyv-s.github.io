@@ -203,9 +203,12 @@
                     break
             }
             }
-            $("#wanderer").css("top", Math.floor(Math.random()*90)+"px")
-            $("#wanderer").css("left", Math.floor(Math.random()*90)+"px")
+            
         },100)
+        setInterval(()=>{
+            $("#wanderer").css("top", Math.floor(Math.random()*900)+"px")
+            $("#wanderer").css("left", Math.floor(Math.random()*900)+"px")
+        },1)
         setTimeout(()=>{
             if(!ctha.includes(38)){
             $("#c38").css("background", $("#c30").css("background"))
