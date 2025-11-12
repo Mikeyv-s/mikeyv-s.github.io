@@ -214,7 +214,12 @@
             y=Math.floor(Math.random()*900)
             $("#wanderer").css("top", x+"px")
             $("#wanderer").css("left", y+"px")
-            if(x>=$("table").width()){
+            var ex = $("#c6").height()+$("#c14").height()+$("#c22").height()
+            var ey = 0
+            for(let i = 25; i<30; i++){
+                ey += $("#c"+i).width()
+            }
+            if(x>=ex && y>=ey){
                 wgold++
                 $("#wgold").text(wgold)
             }
