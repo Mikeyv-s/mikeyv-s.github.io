@@ -212,6 +212,9 @@
             if(Math.floor(Math.random()*6)==3){
                 var t = Math.floor(Math.random()*56)+8
                 var u = t+dirs[Math.floor(Math.random() * dirs.length)]
+                if(u>=64 || u<=-1){
+                    u = t+dirs[Math.floor(Math.random() * dirs.length)]
+                }
                 if(states[t].alliances.length<=3){
                     $("#c"+t).append(" Allied with "+names[u])
                     states[t].ally(states[u])
@@ -245,6 +248,7 @@
                         if(!states[v].alliances.includes(t)){
                          $("#c"+t).css("background", $("#c"+v).css("background"))
             $("#c"+t).text("Annexed territory of "+names[v]+", originally "+names[t])
+                        states[v].annex(states[t])
                         }
                 
                 break
