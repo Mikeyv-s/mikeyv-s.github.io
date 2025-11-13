@@ -18,6 +18,9 @@
             <tr id="r7"></tr>
         </table>
         Wanderer has <span id="wgold">0</span> gold
+        
+        <div id="lb">
+        </div>
         <script>
         var i = 0
         var j
@@ -186,7 +189,7 @@
         $("#c30").append("<br>Gold:<span id='g'>0</span>")
         var ctha = []
         var c30g = 0
-        
+        var leaderboard = []
         var levels = [
              1, 1, 1, 1, 1, 1, 1, 1,
              1, 1, 1, 1, 1, 1, 1, 1,
@@ -213,6 +216,18 @@
                     
                 
             }
+            leaderboard = []
+            for(let j of states){
+                
+                if(j.area>=2){
+                    leaderboard.push(j)
+                }
+            }
+            leaderboard.sort((a,b)=>b.area-a.area)
+            for(let k of leaderboard){
+                $("#lb").html(k.name+"<br>")
+            }
+            
             if(Math.floor(Math.random()*6)==2){
                 var t = Math.floor(Math.random()*64)
                 var u = Math.floor(Math.random()*6)
