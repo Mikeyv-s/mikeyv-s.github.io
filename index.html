@@ -206,7 +206,7 @@
             if(Math.floor(Math.random()*6)==3){
                 var t = Math.floor(Math.random()*56)+8
                 var u = t+dirs[Math.floor(Math.random() * dirs.length)]
-                if(t.alliances.length<=3){
+                if(states[t].alliances.length<=3){
                     $("#c"+t).append(" Allied with "+names[u])
                     states[t].ally(states[u])
                 }
