@@ -36,9 +36,10 @@
                 this.color = color
                 this.name = name
                 this.loc = loc
-                this.alliances = []
+                this.alliances = [] 
                 this.area = 1
                 this.annexedTerritories = []
+                this.owner = loc
             }
             ally(n){
                 this.alliances.push(n.loc)
@@ -253,8 +254,8 @@
                         
                         if(!states[v].alliances.includes(t)){
                          $("#c"+t).css("background", $("#c"+v).css("background"))
-            $("#c"+t).text("Annexed territory of "+names[v]+", originally "+names[t])
-                        states[v].annex(states[t])
+            $("#c"+t).text("Annexed territory of "+names[states[v].owner]+", originally "+names[t])
+                        states[states[v].owner].annex(states[t])
                         }
                 
                 break
