@@ -14,3 +14,7 @@ td{
     width:30px;
     position:absolute;
 }
+@font-face {
+    font-family: 'handwriting'; /*a name to be used later*/
+    src: url('DillyDally.ttf'); /*URL to font*/
+}
