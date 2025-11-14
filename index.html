@@ -27,6 +27,8 @@
         
         <ol id="lb">
         </ol>
+        Current font: <span id="font">Clean</span>
+        <br><button id="cf">Change font</button>
         <script>
         var i = 0
         var j
@@ -222,6 +224,14 @@
             ]
         
         var dirs = [-9, -8, -7, -1, 1, 7, 8, 9]
+            var fonts = ["Times New Roman", "sans-serif", "handwriting"]
+            var s = 0
+            var fn = ["Classic", "Clean", "Handwriting"]
+        $("#cf").click(function(){
+            s = (s+1)%3
+            $("td").css("font-family", fonts[s])
+            $("#font").text(fn[s])
+        })
         setInterval(()=>{
             c30g+=levels[30]
             $("#g").text(c30g)
@@ -252,6 +262,7 @@
                 $("#lb").append("<li>"+k.name+" with "+k.area+" area</li>")
                 
             }
+            
             console.log("t")
             if(Math.floor(Math.random()*6)==2){
                 var t = Math.floor(Math.random()*64)
