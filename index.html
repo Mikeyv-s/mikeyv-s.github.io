@@ -47,11 +47,12 @@
             }
             annex(n){
                 if(!this.alliances.includes(n.loc)){
+                     states[n.owner].area--
                     n.owner=this.loc
-                    states[n.owner].area--
+                   
                     this.annexedTerritories.push(n.loc)
                     this.area++
-                    leaderboard.push(this)
+                   
                 }
             }
         }
