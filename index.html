@@ -200,7 +200,7 @@
         $("td").click(function(){
             console.log($(this).attr("id"))
             alert(states[states[$(this).attr("id").substring(1)].owner].name+`
-            Area: ${states[$(this).attr("id").substring(1)].area}
+            Area: ${states[states[$(this).attr("id").substring(1)].owner].area}
             
             `)
         })
