@@ -14,6 +14,7 @@
         By SpruceGuy<br>
         
         <audio src="My Song 17.m4a" autoplay controls loop></audio>
+        The year is <span id="y">1</span>
         <table>
             <tr id="r0"></tr>
             <tr id="r1"></tr>
@@ -35,6 +36,7 @@
         
         var j
         var states = []
+        var year = 1
         class State{
             constructor(color, name, loc){
                 this.color = color
@@ -320,7 +322,8 @@ req.send(d);
                 $("#wgold").text(wgold)
             }
             
-            
+            year++
+            $("#y").text(year)
         },5000)
         setTimeout(()=>{
             if(!ctha.includes(38)){
