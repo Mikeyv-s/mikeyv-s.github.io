@@ -336,30 +336,39 @@ req.send(d);
             $("#c"+Math.floor(Math.random()*64)).append("<img id='wanderer' src='wanderer.png'>")
             console.info(leaderboard)
         },10000)
+            const lobbyChannel = 'game_lobby';
+    const gameChannel = 'game_instance_'+year;
+            var ign = prompt("What would you like your IGN to be?")
         var pubnub = new PubNub({
             publishKey:"pub-c-327bd66c-dba9-4825-9d83-78888e2cebd1",
-            subscribeKey:"sub-c-3fef8705-c927-4394-83a3-481da882cd34"
+            subscribeKey:"sub-c-3fef8705-c927-4394-83a3-481da882cd34",
+            uuid: ign,
         })
-        function sm(msg){
-            pubnub.publish({
-                channel:"message",
-                message:{
-                    text:msg
-                }
-            })
-        }
-        pubnub.addListener({
-            message:function(m){
-                console.log(m.message.text)
+        
+         pubnub.publish({
+                   channel: gameChannel,
+            message: {
+                action: 'move',
+                player: ign,
+                position: { x: px, y: py}
             }
         })
-        pubnub.subscribe({
-            channels: ["message"]
-        })
-        function si(){
-            sm("joe")
+        
+        pubnub.addListener({
+        message: function(event) {
+            // Handle incoming game events (e.g., update player positions)
+            console.log('Received message:', event.message);
+        },
+        presence: function(event) {
+            // Handle player join/leave events
+            console.log('Presence event:', event);
         }
-        si()
+    });
+        pubnub.subscribe({
+             channels: [gameChannel],
+             withPresence: true
+        })
+       
         // Script tags should go at the end of the body:
         </script>
     </body>
