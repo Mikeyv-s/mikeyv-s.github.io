@@ -7,4 +7,5 @@ export function RMG(){
       map[i].push(terrainTypes[Math.floor(Math.random() * terrainTypes.length)])
     }
   }
+ return map
 }
