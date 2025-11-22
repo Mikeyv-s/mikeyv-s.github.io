@@ -9,12 +9,12 @@
   </head>
   <body>
     <h1>Blocks</h1>
-    <p>Alpha 0.1</p>
+    <p>Alpha 0.2</p>
     <canvas id="game" height="160" width="160">
       
     </canvas>
     <script>
-      var cgs = [
+      var twoIslands = [
       [..."wwwwwwwwwwwwwwww"],
       [..."wwwwwwwwwwwwwwww"],
       [..."wwwwwwwffwwwwwww"],
@@ -33,8 +33,26 @@
       [..."wwwwwwwwwwwwwwww"]
       
       ]
+      var cgs = twoIslands
+      var mountains = [
+      [..."ffffffffffffffff"],
+      [..."ffffffffffffffff"],
+      [..."ffffffffffffffff"],
+      [..."ffffffffgfffffff"],
+      [..."fffffffgggffffff"],
+      [..."ffffffwwwwwfffff"],
+      [..."fffffwwwwwwwffff"],
+      [..."ffffffwwwwwfffff"],
+      [..."ffffffffffwfffff"],
+      [..."ffffffffffwwffff"],
+      [..."fffffffffffwffff"],
+      [..."ffffffmmmmmfwwww"],
+      [..."fffmmmgggmmmffff"],
+      [..."fmmgggggggmgffff"],
+      [..."mgggggggggmggggf"],
+      [..."gggggggggggggggg"]
       
-      
+      ]
       console.log(cgs)
       var i = 0
       var j = 0
