@@ -15,27 +15,26 @@
     </canvas>
     <script>
       var cgs = [
-      "wwwwwwwwwwwwwwww",
-      "wwwwwwwffwwwwwww",
-      "wwwwwwffffwwwwww",
-      "wwwwwffffffwwwww",
-      "wwwwffffffffwwww",
-      "wwwffffffffffwww",
-      "wwffffffffffffww",
-      "wffffffffffffffw",
-      "ffffffffffffffff",
-      "fffffffggfffffff",
-      "ffffffggggffffff",
-      "fffffggggggfffff",
-      "ffffggggggggffff",
-      "fffggggggggggfff",
-      "ffggggggggggggff",
-      "fggggggggggggggf"
+      [..."wwwwwwwwwwwwwwww"],
+      [..."wwwwwwwffwwwwwww"],
+      [..."wwwwwwffffwwwwww"],
+      [..."wwwwwffffffwwwww"],
+      [..."wwwwffffffffwwww"],
+      [..."wwwffffffffffwww"],
+      [..."wwffffffffffffww"],
+      [..."wffffffffffffffw"],
+      [..."ffffffffffffffff"],
+      [..."fffffffggfffffff"],
+      [..."ffffffggggffffff"],
+      [..."fffffggggggfffff"],
+      [..."ffffggggggggffff"],
+      [..."fffggggggggggfff"],
+      [..."ffggggggggggggff"],
+      [..."fggggggggggggggf"]
       
       ]
-      for(let k of cgs){
-        k=[...k]
-      }
+      
+      
       console.log(cgs)
       var i = 0
       var j = 0
@@ -43,7 +42,7 @@
 var ctx = c.getContext("2d");
       for(i=0;i<=255;i++){
         j = Math.floor(i/16)
-        switch(cgs[i]){
+        switch(cgs[j][i%16])
           case "w":
             ctx.fillStyle="#0000ff"
             break;
