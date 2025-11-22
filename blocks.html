@@ -5,6 +5,7 @@
     <title>Blocks</title>
     <script src="https://cdn.pubnub.com/sdk/javascript/pubnub.4.27.2.min.js"></script>
         <script src="//cdn.jsdelivr.net/npm/eruda"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script>eruda.init();</script>
   </head>
   <body>
@@ -13,6 +14,8 @@
     <canvas id="game" height="160" width="160">
       
     </canvas>
+    <button id="changemap">Change map</button>
+    Current map: <span id="cmap">Two Islands</span>
     <script>
       var twoIslands = [
       [..."wwwwwwwwwwwwwwww"],
@@ -34,7 +37,7 @@
       
       ]
       var cgs = twoIslands
-      var mountains = [
+      var river = [
       [..."ffffffffffffffff"],
       [..."ffffffffffffffff"],
       [..."ffffffffffffffff"],
@@ -53,6 +56,7 @@
       [..."gggggggggggggggg"]
       
       ]
+      var cmap=0
       console.log(cgs)
       var i = 0
       var j = 0
@@ -76,6 +80,39 @@ var ctx = c.getContext("2d");
         }
         ctx.fillRect(10*(i-(16*j)),10*j,10,10)
       }
+      $("#changemap").click(function(){
+        ctx.clearRect(0, 0, c.width, c.height)
+        cmap = (cmap+1)%2
+        
+        switch(cmap){
+          case 0:
+            cgs = twoIslands
+            $("#cmap").text("Two Islands")
+            break
+          case 1:
+            cgs = river
+            $("#cmap").text("River")
+            break
+        }
+          for(i=0;i<=255;i++){
+        j = Math.floor(i/16)
+        switch(cgs[j][i%16]){
+          case "w":
+            ctx.fillStyle="#0000ff"
+            break;
+          case "f":
+            ctx.fillStyle="#008000"
+            break;
+          case "g":
+            ctx.fillStyle="#808000"
+            break;
+          case "m":
+            ctx.fillStyle="#c0c0c0"
+            break;
+        }
+        ctx.fillRect(10*(i-(16*j)),10*j,10,10)
+      }
+      })
     </script>
   </body>
 </html>
