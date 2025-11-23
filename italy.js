@@ -1,0 +1,17 @@
+export var italy = [
+  [..."gggfgffgfffgfgwg"],
+  [..."gmfmffmfggmgfffg"],
+  [..."wwwfffgwwwwggggm"],
+  [..."wwwwgggffwwwwwgg"],
+  [..."wgwwwfwggwwwwwww"],
+  [..."wgwwwwwffgfgwwww"],
+  [..."wwwwwwwwwfgggfww"],
+  [..."wggwwwwwwwgffwgw"],
+  [..."wfgwwwwwwwwwgwww"],
+  [..."wwwwwwwwwwwwgwww"],
+  [..."wwwwwwwwwwwgwwww"],
+  [..."wwwwwwwwgggwwwww"],
+  [..."gffffwwwwwgwwwww"],
+  [..."ggggwwwwwgwwwwww"]
+  
+]
