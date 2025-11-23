@@ -18,3 +18,7 @@ td{
     font-family: 'handwriting'; /*a name to be used later*/
     src: url('DillyDally.ttf'); /*URL to font*/
 }
+img[src="pizza.png"]{
+    height:49.1554px;
+    width:49.1554px;
+}
