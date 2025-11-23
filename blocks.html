@@ -19,6 +19,7 @@
     If you see magenta, there was an error
     <script type="module">
       import {RMG} from "./rmg.js"
+      import {italy} from "./italy.js"
       var twoIslands = [
       [..."wwwwwwwwwwwwwwww"],
       [..."wwwwwwwwwwwwwwww"],
@@ -103,7 +104,7 @@ var ctx = c.getContext("2d");
       }
       $("#changemap").click(function(){
         ctx.clearRect(0, 0, c.width, c.height)
-        cmap = (cmap+1)%4
+        cmap = (cmap+1)%5
         
         switch(cmap){
           case 0:
@@ -122,6 +123,9 @@ var ctx = c.getContext("2d");
             cgs = RMG()
             $("#cmap").text("Random")
             break
+          case 4:
+            cgs = italy
+            $("#cmap").text("Italy")
         }
           for(i=0;i<=255;i++){
         j = Math.floor(i/16)
