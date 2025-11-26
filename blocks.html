@@ -157,6 +157,7 @@ var ctx = c.getContext("2d");
         ctx.fillRect(10*(i-(16*j)),10*j,10,10)
       }
       })
+      y -= 0.5
       $("#player").css("top", 10*y+"px")
       $("#player").css("left", 10*x+"px")
       $("#up").click(function(){
