@@ -22,3 +22,7 @@ img:not(#wanderer){
     height:49px;
     width:49px;
 }
+#player{
+    height:30px;
+    width:30px;
+}
