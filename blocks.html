@@ -10,14 +10,21 @@
   </head>
   <body>
     <h1>Blocks</h1>
-    <p>Alpha 0.2</p>
+    <p>Alpha 0.3</p>
     <canvas id="game" height="160" width="160">
       
     </canvas>
+    <img style="position:absolute; top:0px; left:0px;" src="wanderer.png" id="player">
     <button id="changemap">Change map</button>
     Current map: <span id="cmap">Two Islands</span><br>
     If you see magenta, there was an error
+    <button id="up">Up</button>
+    <button id="dn">Down</button>
+    <button id="lf">Left</button>
+    <button id="rg">Right</button>
     <script type="module">
+      var x = 0
+      var y = 0
       import {RMG} from "./rmg.js"
       import {italy} from "./italy.js"
       var twoIslands = [
@@ -149,6 +156,22 @@ var ctx = c.getContext("2d");
         }
         ctx.fillRect(10*(i-(16*j)),10*j,10,10)
       }
+      })
+      $("#up").click(function(){
+        y--
+        $("#player").css("top", 10*y+"px")
+      })
+      $("#dn").click(function(){
+        y++
+        $("#player").css("top", 10*y+"px")
+      })
+      $("#lf").click(function(){
+        x--
+        $("#player").css("left", 10*y+"px")
+      })
+      $("#rg").click(function(){
+        x++
+        $("#player").css("left", 10*y+"px")
       })
     </script>
   </body>
