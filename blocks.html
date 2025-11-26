@@ -23,7 +23,7 @@
     <button id="lf">Left</button>
     <button id="rg">Right</button>
     <script type="module">
-      var x = 0
+      var x = 1
       var y = 11
       import {RMG} from "./rmg.js"
       import {italy} from "./italy.js"
@@ -158,6 +158,7 @@ var ctx = c.getContext("2d");
       }
       })
       $("#player").css("top", 10*y+"px")
+      $("#player").css("left", 10*x+"px")
       $("#up").click(function(){
         y--
         $("#player").css("top", 10*y+"px")
@@ -168,11 +169,11 @@ var ctx = c.getContext("2d");
       })
       $("#lf").click(function(){
         x--
-        $("#player").css("left", 10*y+"px")
+        $("#player").css("left", 10*x+"px")
       })
       $("#rg").click(function(){
         x++
-        $("#player").css("left", 10*y+"px")
+        $("#player").css("left", 10*x+"px")
       })
     </script>
   </body>
