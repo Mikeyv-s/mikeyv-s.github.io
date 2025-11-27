@@ -10,7 +10,7 @@
   </head>
   <body>
     <h1>Blocks</h1>
-    <p>Alpha 0.5.2</p>
+    <p>Alpha 0.5.3</p>
     <canvas id="game" height="160" width="160">
       
     </canvas>
@@ -29,7 +29,7 @@
       var my = 0
       var t = "w"
       var ct = {
-        terr: [[x,y]],
+        terr: [[mx,my]],
         name: "",
         color: "#ff00ff80"
         
@@ -261,6 +261,7 @@ var ctx = c.getContext("2d");
             ]
       ct.name=sl[Math.floor(Math.random()*sl.length)]+vow[Math.floor(Math.random()*vow.length)]+cons[Math.floor(Math.random()*cons.length)]
       setInterval(()=>{
+        ct.terr[0] = [mx,my]
         for(i of ct.terr){
           switch(cgs[i[1]][i[0]]){
             case "m":
