@@ -10,7 +10,7 @@
   </head>
   <body>
     <h1>Blocks</h1>
-    <p>Alpha 0.4</p>
+    <p>Alpha 0.5</p>
     <canvas id="game" height="160" width="160">
       
     </canvas>
@@ -28,6 +28,12 @@
       var mx = 0
       var my = 0
       var t = "w"
+      var ct = {
+        terr: [[x,y]],
+        name: "",
+        color: "#ff00ff80"
+        
+      }
       import {RMG} from "./rmg.js"
       import {italy} from "./italy.js"
       var twoIslands = [
@@ -187,7 +193,93 @@ var ctx = c.getContext("2d");
         $("#player").css("left", 10*x+"px")
         t = cgs[my][mx]
       })
-      
+      var sl = [
+                "Th",
+                "S",
+                "T",
+                "P",
+                "H",
+                "Sh",
+                "M",
+                "B",
+                "V",
+                "J"
+                ]
+                var cons = [
+                     "b",
+                     "bb",
+                     "c",
+                     "ch",
+                     "d",
+                     "dd",
+                     "f",
+                     "g",
+                     "gh",
+                     "h",
+                     "j",
+                     "k",
+                     "kh",
+                     "l",
+                     "ll",
+                     "m",
+                     "n",
+                     "nn",
+                     "mm",
+                     "p",
+                     "ph",
+                     "qu",
+                     "r",
+                     "rr",
+                     "s",
+                     "sh",
+                     "t",
+                     "th",
+                     "v",
+                     "w",
+                     "x",
+                     "y",
+                     "z"
+                    ]
+                    
+        var vow = [
+            "a",
+            "aa",
+            "ae",
+            "ai",
+            "au",
+            "aw",
+            "e",
+            "ee",
+            "i",
+            "igh",
+            "o",
+            "oa",
+            "oo",
+            "u",
+            "uh",
+            "ue"
+            ]
+      ct.name=sl[Math.floor(Math.random()*sl.length)]+vow[Math.floor(Math.random()*vow.length)]+cons[Math.floor(Math.random()*cons.length)]
+      setInterval(()=>{
+        for(i of ct.terr){
+          switch(cgs[i[1]][i[0]]{
+            case "m":
+              ctx.fillStyle = "#d860d8"
+              break
+            case "f":
+              ctx.fillStyle = "#804080"
+              break
+            case "g":
+              ctx.fillStyle = "#c04080"
+              break
+            case "w":
+              ctx.fillStyle = "#8000ff"
+              break
+            
+ 
+          ctx.fillRect(10*i[0],10*i[1],10,10)
+        }
+      },1000)
     </script>
   </body>
 </html>
