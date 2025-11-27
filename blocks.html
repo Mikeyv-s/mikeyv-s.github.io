@@ -10,7 +10,7 @@
   </head>
   <body>
     <h1>Blocks</h1>
-    <p>Alpha 0.5.3</p>
+    <p>Alpha 0.6</p>
     <canvas id="game" height="160" width="160">
       
     </canvas>
@@ -22,12 +22,24 @@
     <button id="dn">Down</button>
     <button id="lf">Left</button>
     <button id="rg">Right</button>
+    <br>
+    <button id="togCM">Toggle Country Mode</button>
+    Currently <span id="cm">off</span>.
     <script type="module">
       var x = 1
       var y = 11
       var mx = 0
       var my = 0
       var t = "w"
+      var cm = false
+      $("#togCM").click(()=>{
+        cm = !cm
+        if(cm){
+          $("#cm").text("on")
+        }else{
+          $("#cm").text("off")
+        }
+      })
       var ct = {
         terr: [[mx,my]],
         name: "",
@@ -261,6 +273,7 @@ var ctx = c.getContext("2d");
             ]
       ct.name=sl[Math.floor(Math.random()*sl.length)]+vow[Math.floor(Math.random()*vow.length)]+cons[Math.floor(Math.random()*cons.length)]
       setInterval(()=>{
+        if(cm){
         ct.terr[0] = [mx,my]
         for(i of ct.terr){
           switch(cgs[i[1]][i[0]]){
@@ -278,9 +291,11 @@ var ctx = c.getContext("2d");
               break
           }
  
-          ctx.fillRect(10*i[0],10*i[1],10,10)
+          ctx.fillRect(10*i[0],10*(i[1]+1),10,10)
+          
         }
-      },1000)
+        }
+      },100)
     </script>
   </body>
 </html>
