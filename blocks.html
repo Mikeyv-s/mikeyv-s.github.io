@@ -10,11 +10,11 @@
   </head>
   <body>
     <h1>Blocks</h1>
-    <p>Alpha 0.3.1</p>
+    <p>Alpha 0.4</p>
     <canvas id="game" height="160" width="160">
       
     </canvas>
-    <img style="position:absolute; top:0px; left:0px;" src="wanderer.png" id="player">
+    <img style="position:absolute; top:0px; left:0px;" src="player.png" id="player">
     <button id="changemap">Change map</button>
     Current map: <span id="cmap">Two Islands</span><br>
     If you see magenta, there was an error
@@ -25,6 +25,9 @@
     <script type="module">
       var x = 1
       var y = 11
+      var mx = 0
+      var my = 0
+      var t = "w"
       import {RMG} from "./rmg.js"
       import {italy} from "./italy.js"
       var twoIslands = [
@@ -162,20 +165,29 @@ var ctx = c.getContext("2d");
       $("#player").css("left", 10*x+"px")
       $("#up").click(function(){
         y--
+        my--
         $("#player").css("top", 10*y+"px")
+        t = cgs[my][mx]
       })
       $("#dn").click(function(){
         y++
+        my++
+        t = cgs[my][mx]
         $("#player").css("top", 10*y+"px")
       })
       $("#lf").click(function(){
         x--
+        mx--
         $("#player").css("left", 10*x+"px")
+        t = cgs[my][mx]
       })
       $("#rg").click(function(){
         x++
+        mx++
         $("#player").css("left", 10*x+"px")
+        t = cgs[my][mx]
       })
+      
     </script>
   </body>
 </html>
